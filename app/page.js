@@ -1,10 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { manufacturers } from "@/data/manufacturers";
 
 const featuredManufacturers = manufacturers.slice(0, 6);
 
 export default function HomePage() {
+  const [activeButton, setActiveButton] = useState(null);
+  const [activeManufacturer, setActiveManufacturer] = useState(null);
+
   return (
     <div>
       {/* HERO VISUAL */}
@@ -47,14 +53,36 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/manufacturers"
-                  className="inline-flex items-center rounded-full bg-[#f26c2a] px-7 py-3.5 text-sm font-medium text-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:shadow-lg hover:shadow-[#f26c2a]/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f26c2a]"
+                  onMouseEnter={() => setActiveButton("manufacturers")}
+                  onMouseLeave={() => setActiveButton(null)}
+                  onPointerEnter={() => setActiveButton("manufacturers")}
+                  onPointerLeave={() => setActiveButton(null)}
+                  onFocus={() => setActiveButton("manufacturers")}
+                  onBlur={() => setActiveButton(null)}
+                  onTouchStart={() => setActiveButton("manufacturers")}
+                  className={`inline-flex items-center rounded-full bg-[#f26c2a] px-7 py-3.5 text-sm font-medium text-white transition-all duration-300 ease-out ${
+                    activeButton === "manufacturers"
+                      ? "-translate-y-1 scale-[1.03] shadow-lg shadow-[#f26c2a]/25"
+                      : "shadow-sm"
+                  }`}
                 >
                   Ver fabricantes
                 </Link>
 
                 <Link
                   href="/about"
-                  className="inline-flex items-center rounded-full border border-white/50 bg-white/10 px-7 py-3.5 text-sm font-medium text-white shadow-sm backdrop-blur-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-white hover:text-[#2f2f2f] hover:shadow-lg hover:shadow-black/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                  onMouseEnter={() => setActiveButton("about")}
+                  onMouseLeave={() => setActiveButton(null)}
+                  onPointerEnter={() => setActiveButton("about")}
+                  onPointerLeave={() => setActiveButton(null)}
+                  onFocus={() => setActiveButton("about")}
+                  onBlur={() => setActiveButton(null)}
+                  onTouchStart={() => setActiveButton("about")}
+                  className={`inline-flex items-center rounded-full border px-7 py-3.5 text-sm font-medium backdrop-blur-sm transition-all duration-300 ease-out ${
+                    activeButton === "about"
+                      ? "-translate-y-1 scale-[1.03] border-white bg-white text-[#2f2f2f] shadow-lg shadow-black/15"
+                      : "border-white/50 bg-white/10 text-white shadow-sm"
+                  }`}
                 >
                   Conócenos
                 </Link>
@@ -129,37 +157,63 @@ export default function HomePage() {
           </div>
 
           <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
-            {featuredManufacturers.map((manufacturer) => (
-              <a
-                key={manufacturer.name}
-                href={manufacturer.website}
-                target="_blank"
-                rel="noreferrer"
-                className="block h-40 w-full rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:border-[#f26c2a] hover:shadow-lg focus-visible:-translate-y-1 focus-visible:scale-[1.02] focus-visible:border-[#f26c2a] focus-visible:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f26c2a]"
-              >
-                <div className="flex h-full items-center justify-center">
-                  {manufacturer.logo ? (
-                    <Image
-                      src={manufacturer.logo}
-                      alt={manufacturer.name}
-                      width={220}
-                      height={100}
-                      className="h-24 w-auto object-contain"
-                    />
-                  ) : (
-                    <span className="text-sm text-gray-400">
-                      {manufacturer.name}
-                    </span>
-                  )}
-                </div>
-              </a>
-            ))}
+            {featuredManufacturers.map((manufacturer, index) => {
+              const isActive = activeManufacturer === index;
+
+              return (
+                <a
+                  key={manufacturer.name}
+                  href={manufacturer.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  onMouseEnter={() => setActiveManufacturer(index)}
+                  onMouseLeave={() => setActiveManufacturer(null)}
+                  onPointerEnter={() => setActiveManufacturer(index)}
+                  onPointerLeave={() => setActiveManufacturer(null)}
+                  onFocus={() => setActiveManufacturer(index)}
+                  onBlur={() => setActiveManufacturer(null)}
+                  onTouchStart={() => setActiveManufacturer(index)}
+                  className={`block w-full h-40 rounded-2xl bg-white p-6 border transition-all duration-300 ease-out ${
+                    isActive
+                      ? "border-[#f26c2a] shadow-lg -translate-y-1 scale-[1.02]"
+                      : "border-gray-200 shadow-sm"
+                  }`}
+                >
+                  <div className="flex h-full items-center justify-center">
+                    {manufacturer.logo ? (
+                      <Image
+                        src={manufacturer.logo}
+                        alt={manufacturer.name}
+                        width={220}
+                        height={100}
+                        className="h-24 w-auto object-contain"
+                      />
+                    ) : (
+                      <span className="text-sm text-gray-400">
+                        {manufacturer.name}
+                      </span>
+                    )}
+                  </div>
+                </a>
+              );
+            })}
           </div>
 
           <div className="mt-10">
             <Link
               href="/manufacturers"
-              className="inline-flex items-center rounded-full border border-[#f26c2a] px-6 py-3 text-sm font-medium text-[#f26c2a] shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-[#f26c2a] hover:text-white hover:shadow-lg hover:shadow-[#f26c2a]/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f26c2a]"
+              onMouseEnter={() => setActiveButton("explore")}
+              onMouseLeave={() => setActiveButton(null)}
+              onPointerEnter={() => setActiveButton("explore")}
+              onPointerLeave={() => setActiveButton(null)}
+              onFocus={() => setActiveButton("explore")}
+              onBlur={() => setActiveButton(null)}
+              onTouchStart={() => setActiveButton("explore")}
+              className={`inline-flex items-center rounded-full border border-[#f26c2a] px-6 py-3 text-sm font-medium transition-all duration-300 ease-out ${
+                activeButton === "explore"
+                  ? "-translate-y-1 scale-[1.03] bg-[#f26c2a] text-white shadow-lg shadow-[#f26c2a]/20"
+                  : "text-[#f26c2a] shadow-sm"
+              }`}
             >
               Explorar todos los fabricantes
             </Link>
