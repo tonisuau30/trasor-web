@@ -18,7 +18,7 @@ export default function HomePageClient() {
       {/* HERO VISUAL */}
       <section className="relative min-h-screen overflow-hidden">
         {/* IMAGEN DE FONDO */}
-        <div className="absolute inset-0">
+        <div className="pointer-events-none absolute inset-0">
           <Image
             src="/images/home/image-home.png"
             alt={t("home.heroAlt")}
@@ -29,10 +29,10 @@ export default function HomePageClient() {
         </div>
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-[rgba(20,35,45,0.38)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[rgba(20,35,45,0.38)]" />
 
         {/* CONTENIDO HERO */}
-        <div className="relative z-10 flex min-h-screen items-center">
+        <div className="relative z-20 flex min-h-screen items-center">
           <div className="max-w-7xl mx-auto w-full px-6 pt-28 pb-16 md:pt-36">
             <div className="max-w-3xl">
               <p className="mb-5 text-sm font-medium uppercase tracking-[0.24em] text-white/80">
@@ -91,7 +91,7 @@ export default function HomePageClient() {
         </div>
 
         {/* FADE HACIA LA SIGUIENTE SECCIÓN */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 h-32 bg-gradient-to-b from-transparent to-[#f7f3ef]" />
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-32 bg-gradient-to-b from-transparent to-[#f7f3ef]" />
       </section>
 
       {/* BLOQUE INTRO */}
