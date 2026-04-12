@@ -13,16 +13,17 @@ export default function ManufacturersPage() {
         {/* HEADER */}
         <div className="max-w-2xl mb-16">
           <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-[#f26c2a]">
-            Manufacturers
+            Fabricantes
           </p>
 
           <h1 className="mb-4 text-4xl font-semibold text-[#2f2f2f] md:text-5xl">
-            Trusted manufacturing partners
+            Fabricantes en los que confiamos
           </h1>
 
           <p className="text-lg leading-8 text-gray-600">
-            We collaborate with a curated selection of international manufacturers,
-            ensuring quality, reliability and long-term professional relationships.
+            Colaboramos con una selección cuidada de fabricantes
+            internacionales, apostando por la calidad, la fiabilidad y las
+            relaciones profesionales a largo plazo.
           </p>
         </div>
 
