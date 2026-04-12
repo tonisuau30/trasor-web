@@ -1,12 +1,14 @@
+import SimpleTranslatedPage from "@/components/SimpleTranslatedPage";
+
+export const metadata = {
+  title: "Material dental para clínicas",
+  description:
+    "Material dental para clínicas distribuido por TRASOR en España a través de una red profesional de distribuidores.",
+  alternates: {
+    canonical: "/clinic",
+  },
+};
+
 export default function ClinicPage() {
-  return (
-    <section className="max-w-7xl mx-auto px-6 py-20 pt-32">
-      <h1 className="text-4xl font-semibold text-[#2f2f2f] mb-4">
-        Clinic
-      </h1>
-      <p className="text-lg text-gray-600">
-        Coming soon.
-      </p>
-    </section>
-  );
+  return <SimpleTranslatedPage pageKey="clinic" />;
 }

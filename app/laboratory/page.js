@@ -1,12 +1,14 @@
+import SimpleTranslatedPage from "@/components/SimpleTranslatedPage";
+
+export const metadata = {
+  title: "Material dental para laboratorios",
+  description:
+    "Material dental para laboratorios distribuido por TRASOR en España, con fabricantes seleccionados y experiencia en el sector dental.",
+  alternates: {
+    canonical: "/laboratory",
+  },
+};
+
 export default function LaboratoryPage() {
-  return (
-    <section className="max-w-7xl mx-auto px-6 py-20 pt-32">
-      <h1 className="text-4xl font-semibold text-[#2f2f2f] mb-4">
-        Laboratory
-      </h1>
-      <p className="text-lg text-gray-600">
-        Coming soon.
-      </p>
-    </section>
-  );
+  return <SimpleTranslatedPage pageKey="laboratory" />;
 }
