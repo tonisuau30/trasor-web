@@ -13,20 +13,20 @@ export const manufacturers = [
   },
   {
     name: "DISPOTECH",
-    logo: null,
-    website: "https://example.com",
+    logo: "/images/manufacturers/dispotech.png",
+    website: "https://www.dispotech.com/es",
     category: "general",
   },
   {
     name: "LOMBARDA H.",
-    logo: null,
-    website: "https://example.com",
+    logo: "/images/manufacturers/lombarda-h.png",
+    website: "https://www.lombardah.com/it/",
     category: "general",
   },
   {
     name: "BART MEDICAL",
-    logo: null,
-    website: "https://example.com",
+    logo: "/images/manufacturers/bart-medical.png",
+    website: "https://www.bartmedical.com/es/",
     category: "general",
   },
   {
