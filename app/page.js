@@ -186,7 +186,9 @@ export default function HomePage() {
                         alt={manufacturer.name}
                         width={220}
                         height={100}
-                        className="h-24 w-auto object-contain"
+                        className={`${
+                          manufacturer.logoClassName ?? "h-24"
+                        } w-auto object-contain`}
                       />
                     ) : (
                       <span className="text-sm text-gray-400">
