@@ -28,7 +28,7 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto w-full px-6 pt-28 pb-16 md:pt-36">
             <div className="max-w-3xl">
               <p className="mb-5 text-sm font-medium uppercase tracking-[0.24em] text-white/80">
-                Dental distribution in Spain
+                Distribución dental en España
               </p>
 
               <h1 className="mb-6 text-5xl font-semibold leading-tight text-white md:text-7xl">
@@ -49,14 +49,14 @@ export default function HomePage() {
                   href="/manufacturers"
                   className="inline-flex items-center rounded-full bg-[#f26c2a] px-7 py-3.5 text-sm font-medium text-white transition duration-300 hover:scale-[1.02] hover:opacity-95"
                 >
-                  View manufacturers
+                  Ver fabricantes
                 </Link>
 
                 <Link
                   href="/about"
                   className="inline-flex items-center rounded-full border border-white/50 bg-white/10 px-7 py-3.5 text-sm font-medium text-white backdrop-blur-sm transition duration-300 hover:bg-white hover:text-[#2f2f2f]"
                 >
-                  About us
+                  Conócenos
                 </Link>
               </div>
             </div>
@@ -73,7 +73,7 @@ export default function HomePage() {
           <div className="grid items-start gap-12 md:grid-cols-[1.15fr_0.85fr]">
             <div className="max-w-3xl">
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#f26c2a]">
-                About Trasor
+                Sobre Trasor
               </p>
 
               <h2 className="mb-6 text-4xl font-semibold leading-tight text-[#2f2f2f] md:text-5xl">
@@ -81,10 +81,10 @@ export default function HomePage() {
               </h2>
 
               <p className="text-lg leading-8 text-gray-600">
-                Trabajamos exclusivamente a través de distribuidores, con
-                cobertura nacional y una selección cuidada de fabricantes
-                internacionales que aportan calidad, consistencia y confianza a
-                largo plazo.
+                Trabajamos exclusivamente mediante distribuidores, con cobertura
+                nacional y una selección cuidada de fabricantes internacionales
+                que destacan por su calidad, consistencia y confianza a largo
+                plazo.
               </p>
             </div>
 
@@ -95,13 +95,13 @@ export default function HomePage() {
                 </p>
 
                 <p className="text-base leading-7">
-                  Venta a través de tu distribuidor habitual, con una red
-                  comercial profesional y una visión de servicio cercana y
+                  Comercializamos a través de tu distribuidor habitual, con una
+                  red comercial profesional y un enfoque de servicio cercano y
                   fiable.
                 </p>
 
                 <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#f26c2a]">
-                  Quality · Reliability · Service
+                  Calidad · Fiabilidad · Servicio
                 </p>
               </div>
             </div>
@@ -114,16 +114,17 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 py-20">
           <div className="mb-12 max-w-2xl">
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-[#f26c2a]">
-              Manufacturers
+              Fabricantes
             </p>
 
             <h2 className="mb-4 text-4xl font-semibold text-[#2f2f2f]">
-              Selected international partners
+              Socios internacionales seleccionados
             </h2>
 
             <p className="text-lg leading-8 text-gray-600">
-              We work with trusted manufacturers whose products support quality,
-              consistency and long-term professional confidence.
+              Colaboramos con fabricantes de confianza cuyos productos
+              refuerzan la calidad, la consistencia y la seguridad profesional
+              a largo plazo.
             </p>
           </div>
 
@@ -157,7 +158,7 @@ export default function HomePage() {
               href="/manufacturers"
               className="inline-flex items-center rounded-full border border-[#f26c2a] px-6 py-3 text-sm font-medium text-[#f26c2a] transition hover:bg-[#f26c2a] hover:text-white"
             >
-              Explore all manufacturers
+              Explorar todos los fabricantes
             </Link>
           </div>
         </div>

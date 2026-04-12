@@ -10,7 +10,7 @@ export default function AboutPage() {
             {/* TEXTO */}
             <div className="max-w-2xl">
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#f26c2a]">
-                About Us
+                Sobre nosotros
               </p>
 
               <h1 className="mb-6 text-5xl font-semibold leading-tight text-[#2f2f2f] md:text-6xl">
@@ -22,10 +22,10 @@ export default function AboutPage() {
               </p>
 
               <p className="text-lg leading-8 text-gray-600">
-                Desde el año 2000, trabajamos como nexo entre fabricantes
+                Desde el año 2000, actuamos como enlace entre fabricantes
                 internacionales de productos dentales y el mercado español,
-                apostando siempre por materiales que aporten valor añadido,
-                fiabilidad y una distribución profesional.
+                priorizando siempre materiales con valor añadido, fiabilidad y
+                una distribución profesional.
               </p>
             </div>
 
@@ -42,17 +42,17 @@ export default function AboutPage() {
 
                 <div className="relative max-w-[75%] space-y-4">
                   <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#f26c2a]">
-                    Since 2000
+                    Desde 2000
                   </p>
 
                   <p className="text-base leading-7 text-gray-600">
-                    Mayoristas en el sector dental con una trayectoria basada en
-                    la excelencia, la cercanía y la confianza.
+                    Somos mayoristas del sector dental, con una trayectoria
+                    construida sobre la excelencia, la cercanía y la confianza.
                   </p>
 
                   <p className="text-base leading-7 text-gray-600">
-                    Nuestra red de distribuidores y nuestra experiencia son la
-                    base del servicio que ofrecemos cada día.
+                    Nuestra experiencia y la red de distribuidores son la base
+                    del servicio que ofrecemos cada día.
                   </p>
                 </div>
               </div>
@@ -72,15 +72,14 @@ export default function AboutPage() {
 
               <div className="space-y-5 text-lg leading-8 text-gray-600">
                 <p>
-                  TRASOR nació en el año 2000 con el fin de establecer un nexo
-                  entre los fabricantes internacionales de productos dentales y
-                  el mercado español.
+                  TRASOR nació en el año 2000 para conectar a fabricantes
+                  internacionales de productos dentales con el mercado español.
                 </p>
 
                 <p>
-                  Nuestra filosofía siempre ha sido la de buscar aquellos
-                  materiales alternativos que considerábamos que aportaban un
-                  valor añadido a lo existente.
+                  Nuestra filosofía ha sido siempre buscar materiales
+                  alternativos que aportaran un valor añadido real a lo ya
+                  existente.
                 </p>
 
                 <p>
@@ -97,9 +96,9 @@ export default function AboutPage() {
 
               <div className="space-y-5 text-lg leading-8 text-gray-600">
                 <p>
-                  Nuestro objetivo es que, a través de nuestros clientes y de su
-                  red comercial, podamos cubrir el mercado nacional con los
-                  mejores productos y el mejor servicio que podamos ofrecer.
+                  Nuestro objetivo es cubrir el mercado nacional, a través de
+                  nuestros clientes y su red comercial, con los mejores
+                  productos y el mejor servicio posible.
                 </p>
 
                 <p>

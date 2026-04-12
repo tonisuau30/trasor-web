@@ -8,7 +8,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-6 py-24 md:py-28">
           <div className="max-w-3xl">
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[#f26c2a]">
-              Contact
+              Contacto
             </p>
 
             <h1 className="mb-6 text-5xl font-semibold leading-tight text-[#2f2f2f] md:text-6xl">
@@ -17,7 +17,7 @@ export default function ContactPage() {
 
             <p className="text-lg leading-8 text-gray-600">
               Si necesitas información sobre nuestros productos, promociones o
-              la forma de compra, estaremos encantados de ayudarte.
+              cómo comprar, estaremos encantados de ayudarte.
             </p>
           </div>
         </div>
@@ -46,14 +46,14 @@ export default function ContactPage() {
 
               <div className="space-y-5 text-lg leading-8 text-gray-600">
                 <p>
-                  Si quieres comprar algún producto, necesitas más información o
-                  conocer promociones disponibles, puedes contactar con nosotros
+                  Si quieres comprar algún producto, resolver dudas o conocer
+                  las promociones disponibles, puedes contactar con nosotros
                   directamente.
                 </p>
 
                 <p>
                   TRASOR es mayorista en el sector dental desde hace más de 20
-                  años, trabajando siempre a través de una red profesional de
+                  años y trabaja siempre a través de una red profesional de
                   distribución.
                 </p>
               </div>
@@ -132,8 +132,8 @@ export default function ContactPage() {
           {/* BOTTOM NOTE */}
           <div className="mt-12 rounded-[2rem] border border-gray-200 bg-white p-8 text-center shadow-sm">
             <p className="text-lg leading-8 text-gray-600">
-              Nuestro objetivo es ofrecer el mejor servicio posible a través de
-              una red comercial profesional y una selección cuidada de productos
+              Nuestro objetivo es ofrecer el mejor servicio posible mediante una
+              red comercial profesional y una selección cuidada de productos
               dentales.
             </p>
           </div>
