@@ -47,14 +47,14 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/manufacturers"
-                  className="inline-flex items-center rounded-full bg-[#f26c2a] px-7 py-3.5 text-sm font-medium text-white transition duration-300 hover:scale-[1.02] hover:opacity-95"
+                  className="inline-flex items-center rounded-full bg-[#f26c2a] px-7 py-3.5 text-sm font-medium text-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:shadow-lg hover:shadow-[#f26c2a]/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f26c2a]"
                 >
                   View manufacturers
                 </Link>
 
                 <Link
                   href="/about"
-                  className="inline-flex items-center rounded-full border border-white/50 bg-white/10 px-7 py-3.5 text-sm font-medium text-white backdrop-blur-sm transition duration-300 hover:bg-white hover:text-[#2f2f2f]"
+                  className="inline-flex items-center rounded-full border border-white/50 bg-white/10 px-7 py-3.5 text-sm font-medium text-white shadow-sm backdrop-blur-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-white hover:text-[#2f2f2f] hover:shadow-lg hover:shadow-black/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                 >
                   About us
                 </Link>
@@ -129,9 +129,12 @@ export default function HomePage() {
 
           <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
             {featuredManufacturers.map((manufacturer) => (
-              <div
+              <a
                 key={manufacturer.name}
-                className="flex h-40 w-full items-center justify-center rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
+                href={manufacturer.website}
+                target="_blank"
+                rel="noreferrer"
+                className="block h-40 w-full rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:border-[#f26c2a] hover:shadow-lg focus-visible:-translate-y-1 focus-visible:scale-[1.02] focus-visible:border-[#f26c2a] focus-visible:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f26c2a]"
               >
                 <div className="flex h-full items-center justify-center">
                   {manufacturer.logo ? (
@@ -148,14 +151,14 @@ export default function HomePage() {
                     </span>
                   )}
                 </div>
-              </div>
+              </a>
             ))}
           </div>
 
           <div className="mt-10">
             <Link
               href="/manufacturers"
-              className="inline-flex items-center rounded-full border border-[#f26c2a] px-6 py-3 text-sm font-medium text-[#f26c2a] transition hover:bg-[#f26c2a] hover:text-white"
+              className="inline-flex items-center rounded-full border border-[#f26c2a] px-6 py-3 text-sm font-medium text-[#f26c2a] shadow-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-[#f26c2a] hover:text-white hover:shadow-lg hover:shadow-[#f26c2a]/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f26c2a]"
             >
               Explore all manufacturers
             </Link>
