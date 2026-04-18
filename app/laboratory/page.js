@@ -1,14 +1,31 @@
-import SimpleTranslatedPage from "@/components/SimpleTranslatedPage";
+import BrandIndexPageClient from "@/components/BrandIndexPageClient";
+import CategoryHeroClient from "@/components/CategoryHeroClient";
+import { laboratoryBrands } from "@/data/brands";
 
 export const metadata = {
   title: "Material dental para laboratorios",
   description:
-    "Material dental para laboratorios distribuido por TRASOR en España, con fabricantes seleccionados y experiencia en el sector dental.",
+    "Marcas de material dental para laboratorios distribuidas por TRASOR en España.",
   alternates: {
     canonical: "/laboratory",
   },
 };
 
 export default function LaboratoryPage() {
-  return <SimpleTranslatedPage pageKey="laboratory" />;
+  return (
+    <>
+      <CategoryHeroClient
+        categoryKey="laboratory"
+        backgroundImage="/images/backgrounds/laboratory/laboratory-hero-bg.png"
+        targetId="laboratory-products"
+      />
+
+      <BrandIndexPageClient
+        brands={laboratoryBrands}
+        categoryKey="laboratory"
+        basePath="/laboratory"
+        sectionId="laboratory-products"
+      />
+    </>
+  );
 }

@@ -1,5 +1,6 @@
 import "./globals.css";
 import Header from "@/components/Header";
+import ContactFooter from "@/components/ContactFooter";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { SITE_URL } from "./siteConfig";
 
@@ -43,11 +44,7 @@ export default function RootLayout({ children }) {
         <LanguageProvider>
           <Header />
           <main className="flex-1">{children}</main>
-          <footer className="w-full border-t border-gray-200 mt-10">
-            <div className="max-w-7xl mx-auto px-6 py-6 text-sm text-center">
-              © {new Date().getFullYear()} TRASOR
-            </div>
-          </footer>
+          <ContactFooter />
         </LanguageProvider>
       </body>
     </html>

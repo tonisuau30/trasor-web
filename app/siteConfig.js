@@ -3,7 +3,6 @@ export const SITE_URL =
 
 export const SITE_ROUTES = [
   "",
-  "/manufacturers",
   "/laboratory",
   "/clinic",
   "/about",

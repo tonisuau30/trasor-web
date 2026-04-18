@@ -4,14 +4,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
+import { clinicBrands, laboratoryBrands } from "@/data/brands";
 
 const navLinks = [
   { href: "/", labelKey: "header.home" },
-  { href: "/manufacturers", labelKey: "header.manufacturers" },
-  { href: "/laboratory", labelKey: "header.laboratory" },
-  { href: "/clinic", labelKey: "header.clinic" },
+  {
+    href: "/clinic",
+    labelKey: "header.clinic",
+    brands: clinicBrands,
+  },
+  {
+    href: "/laboratory",
+    labelKey: "header.laboratory",
+    brands: laboratoryBrands,
+  },
   { href: "/about", labelKey: "header.about" },
   { href: "/contact", labelKey: "header.contact" },
 ];
@@ -21,10 +29,12 @@ export default function Header() {
   const { language, languages, setLanguage, t } = useLanguage();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeNavItem, setActiveNavItem] = useState(null);
+  const [expandedMobileItem, setExpandedMobileItem] = useState(null);
 
   const closeMenu = () => {
     setMobileOpen(false);
     setActiveNavItem(null);
+    setExpandedMobileItem(null);
   };
 
   return (
@@ -43,8 +53,77 @@ export default function Header() {
 
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const hasDropdown = Boolean(link.brands);
+            const isActive =
+              pathname === link.href || pathname.startsWith(`${link.href}/`);
             const isInteractive = activeNavItem === link.href;
+
+            if (hasDropdown) {
+              return (
+                <div
+                  key={link.href}
+                  className="relative"
+                  onMouseEnter={() => setActiveNavItem(link.href)}
+                  onMouseLeave={() => setActiveNavItem(null)}
+                  onPointerEnter={() => setActiveNavItem(link.href)}
+                  onPointerLeave={() => setActiveNavItem(null)}
+                  onFocus={() => setActiveNavItem(link.href)}
+                  onBlur={() => setActiveNavItem(null)}
+                >
+                  <Link
+                    href={link.href}
+                    className={`relative inline-flex items-center gap-1 py-2 text-sm font-medium transition-all duration-300 ease-out ${
+                      isActive || isInteractive
+                        ? "text-[#f26c2a]"
+                        : "text-[#2f2f2f]"
+                    } ${isInteractive ? "-translate-y-0.5 scale-[1.04]" : ""}`}
+                  >
+                    <span>{t(link.labelKey)}</span>
+                    <ChevronDown
+                      size={14}
+                      className={`transition-transform duration-300 ${
+                        isInteractive ? "rotate-180" : ""
+                      }`}
+                    />
+                    <span
+                      className={`absolute bottom-0 left-0 h-0.5 rounded-full bg-[#f26c2a] transition-all duration-300 ease-out ${
+                        isActive || isInteractive
+                          ? "w-full opacity-100"
+                          : "w-0 opacity-0"
+                      }`}
+                    />
+                  </Link>
+
+                  <div
+                    className={`absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 transition-all duration-200 ${
+                      isInteractive
+                        ? "pointer-events-auto translate-y-0 opacity-100"
+                        : "pointer-events-none -translate-y-2 opacity-0"
+                    }`}
+                  >
+                    <div className="rounded-2xl border border-gray-200 bg-white p-3 shadow-[0_18px_50px_rgba(15,23,42,0.12)]">
+                      <Link
+                        href={link.href}
+                        className="relative block rounded-xl px-4 py-3 text-sm font-semibold text-[#2f2f2f] transition-all duration-200 ease-out hover:translate-x-1 hover:bg-[#f26c2a]/10 hover:text-[#f26c2a] hover:shadow-sm focus-visible:translate-x-1 focus-visible:bg-[#f26c2a]/10 focus-visible:text-[#f26c2a] focus-visible:outline-none active:scale-[0.98] active:bg-[#f26c2a]/15"
+                      >
+                        {t("header.viewAll")} {t(link.labelKey)}
+                      </Link>
+                      <div className="my-2 h-px bg-gray-200" />
+                      {link.brands.map((brand) => (
+                        <Link
+                          key={brand.slug}
+                          href={`${link.href}/${brand.slug}`}
+                          className="group relative block rounded-xl px-5 py-2.5 text-sm text-gray-600 transition-all duration-200 ease-out hover:translate-x-1 hover:bg-[#f26c2a]/10 hover:text-[#f26c2a] hover:shadow-sm focus-visible:translate-x-1 focus-visible:bg-[#f26c2a]/10 focus-visible:text-[#f26c2a] focus-visible:outline-none active:scale-[0.98] active:bg-[#f26c2a]/15"
+                        >
+                          <span className="absolute left-2 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-[#f26c2a] opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100" />
+                          {brand.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            }
 
             return (
               <Link
@@ -135,9 +214,68 @@ export default function Header() {
         <div className="border-t border-gray-200 bg-white md:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col px-6 py-4">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const hasDropdown = Boolean(link.brands);
+              const isActive =
+                pathname === link.href || pathname.startsWith(`${link.href}/`);
               const activeKey = `mobile-${link.href}`;
               const isInteractive = activeNavItem === activeKey;
+
+              if (hasDropdown) {
+                const isExpanded = expandedMobileItem === link.href;
+
+                return (
+                  <div key={link.href} className="border-b border-gray-100 py-1">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setExpandedMobileItem(isExpanded ? null : link.href)
+                      }
+                      onMouseEnter={() => setActiveNavItem(activeKey)}
+                      onMouseLeave={() => setActiveNavItem(null)}
+                      onPointerEnter={() => setActiveNavItem(activeKey)}
+                      onPointerLeave={() => setActiveNavItem(null)}
+                      onFocus={() => setActiveNavItem(activeKey)}
+                      onBlur={() => setActiveNavItem(null)}
+                      className={`flex w-full items-center justify-between py-3 text-left text-sm font-medium transition-all duration-300 ease-out ${
+                        isActive || isInteractive
+                          ? "text-[#f26c2a]"
+                          : "text-[#2f2f2f]"
+                      } ${isInteractive ? "translate-x-1" : ""}`}
+                      aria-expanded={isExpanded}
+                    >
+                      <span>{t(link.labelKey)}</span>
+                      <ChevronDown
+                        size={16}
+                        className={`transition-transform duration-300 ${
+                          isExpanded ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+
+                    {isExpanded && (
+                      <div className="pb-3 pl-4">
+                        <Link
+                          href={link.href}
+                          onClick={closeMenu}
+                          className="block rounded-lg px-3 py-2 text-sm font-semibold text-[#2f2f2f] transition-all duration-200 hover:translate-x-1 hover:bg-[#f26c2a]/10 hover:text-[#f26c2a] hover:shadow-sm active:scale-[0.98] active:bg-[#f26c2a]/15"
+                        >
+                          {t("header.viewAll")} {t(link.labelKey)}
+                        </Link>
+                        {link.brands.map((brand) => (
+                          <Link
+                          key={brand.slug}
+                          href={`${link.href}/${brand.slug}`}
+                          onClick={closeMenu}
+                          className="block rounded-lg px-3 py-2 text-sm text-gray-600 transition-all duration-200 hover:translate-x-1 hover:bg-[#f26c2a]/10 hover:text-[#f26c2a] hover:shadow-sm active:scale-[0.98] active:bg-[#f26c2a]/15"
+                        >
+                            {brand.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
 
               return (
                 <Link

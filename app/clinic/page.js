@@ -1,14 +1,31 @@
-import SimpleTranslatedPage from "@/components/SimpleTranslatedPage";
+import BrandIndexPageClient from "@/components/BrandIndexPageClient";
+import CategoryHeroClient from "@/components/CategoryHeroClient";
+import { clinicBrands } from "@/data/brands";
 
 export const metadata = {
   title: "Material dental para clínicas",
   description:
-    "Material dental para clínicas distribuido por TRASOR en España a través de una red profesional de distribuidores.",
+    "Marcas de material dental para clínicas distribuidas por TRASOR en España.",
   alternates: {
     canonical: "/clinic",
   },
 };
 
 export default function ClinicPage() {
-  return <SimpleTranslatedPage pageKey="clinic" />;
+  return (
+    <>
+      <CategoryHeroClient
+        categoryKey="clinic"
+        backgroundImage="/images/backgrounds/clinic/clinic-hero-bg.png"
+        targetId="clinic-products"
+      />
+
+      <BrandIndexPageClient
+        brands={clinicBrands}
+        categoryKey="clinic"
+        basePath="/clinic"
+        sectionId="clinic-products"
+      />
+    </>
+  );
 }

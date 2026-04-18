@@ -3,10 +3,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { manufacturers } from "@/data/manufacturers";
+import { clinicBrands, laboratoryBrands } from "@/data/brands";
 import { useLanguage } from "@/components/LanguageProvider";
 
-const featuredManufacturers = manufacturers.slice(0, 6);
+const featuredBrands = [
+  ...clinicBrands.slice(0, 3).map((brand) => ({
+    ...brand,
+    basePath: "/clinic",
+  })),
+  ...laboratoryBrands.slice(0, 3).map((brand) => ({
+    ...brand,
+    basePath: "/laboratory",
+  })),
+];
 
 export default function HomePageClient() {
   const { t } = useLanguage();
@@ -29,7 +38,21 @@ export default function HomePageClient() {
         </div>
 
         {/* OVERLAY */}
-        <div className="pointer-events-none absolute inset-0 bg-[rgba(20,35,45,0.38)]" />
+        <div className="pointer-events-none absolute inset-0 bg-black/50" />
+
+        {/* WATERMARK LOGO */}
+        <div className="pointer-events-none absolute inset-0 z-10">
+          <div className="mx-auto flex h-full max-w-7xl items-center justify-end px-6 pt-28 pb-16 md:pt-36">
+            <Image
+              src="/images/brand/trasor-logo.png"
+              alt=""
+              width={320}
+              height={90}
+              aria-hidden="true"
+              className="w-[260px] select-none opacity-[0.09] brightness-0 invert sm:w-[340px] md:w-[460px] lg:w-[560px] xl:w-[640px]"
+            />
+          </div>
+        </div>
 
         {/* CONTENIDO HERO */}
         <div className="relative z-20 flex min-h-screen items-center">
@@ -51,16 +74,16 @@ export default function HomePageClient() {
 
               <div className="flex flex-wrap gap-4">
                 <Link
-                  href="/manufacturers"
-                  onMouseEnter={() => setActiveButton("manufacturers")}
+                  href="/clinic"
+                  onMouseEnter={() => setActiveButton("clinic")}
                   onMouseLeave={() => setActiveButton(null)}
-                  onPointerEnter={() => setActiveButton("manufacturers")}
+                  onPointerEnter={() => setActiveButton("clinic")}
                   onPointerLeave={() => setActiveButton(null)}
-                  onFocus={() => setActiveButton("manufacturers")}
+                  onFocus={() => setActiveButton("clinic")}
                   onBlur={() => setActiveButton(null)}
-                  onTouchStart={() => setActiveButton("manufacturers")}
+                  onTouchStart={() => setActiveButton("clinic")}
                   className={`inline-flex items-center rounded-full bg-[#f26c2a] px-7 py-3.5 text-sm font-medium text-white transition-all duration-300 ease-out ${
-                    activeButton === "manufacturers"
+                    activeButton === "clinic"
                       ? "-translate-y-1 scale-[1.03] shadow-lg shadow-[#f26c2a]/25"
                       : "shadow-sm"
                   }`}
@@ -69,16 +92,16 @@ export default function HomePageClient() {
                 </Link>
 
                 <Link
-                  href="/about"
-                  onMouseEnter={() => setActiveButton("about")}
+                  href="/laboratory"
+                  onMouseEnter={() => setActiveButton("laboratory")}
                   onMouseLeave={() => setActiveButton(null)}
-                  onPointerEnter={() => setActiveButton("about")}
+                  onPointerEnter={() => setActiveButton("laboratory")}
                   onPointerLeave={() => setActiveButton(null)}
-                  onFocus={() => setActiveButton("about")}
+                  onFocus={() => setActiveButton("laboratory")}
                   onBlur={() => setActiveButton(null)}
-                  onTouchStart={() => setActiveButton("about")}
+                  onTouchStart={() => setActiveButton("laboratory")}
                   className={`inline-flex items-center rounded-full border px-7 py-3.5 text-sm font-medium backdrop-blur-sm transition-all duration-300 ease-out ${
-                    activeButton === "about"
+                    activeButton === "laboratory"
                       ? "-translate-y-1 scale-[1.03] border-white bg-white text-[#2f2f2f] shadow-lg shadow-black/15"
                       : "border-white/50 bg-white/10 text-white shadow-sm"
                   }`}
@@ -91,7 +114,6 @@ export default function HomePageClient() {
         </div>
 
         {/* FADE HACIA LA SIGUIENTE SECCIÓN */}
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-32 bg-gradient-to-b from-transparent to-[#f7f3ef]" />
       </section>
 
       {/* BLOQUE INTRO */}
@@ -131,7 +153,7 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      {/* MANUFACTURERS PREVIEW */}
+      {/* BRANDS PREVIEW */}
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <div className="mb-12 max-w-2xl">
@@ -149,15 +171,13 @@ export default function HomePageClient() {
           </div>
 
           <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
-            {featuredManufacturers.map((manufacturer, index) => {
+            {featuredBrands.map((manufacturer, index) => {
               const isActive = activeManufacturer === index;
 
               return (
-                <a
-                  key={manufacturer.name}
-                  href={manufacturer.website}
-                  target="_blank"
-                  rel="noreferrer"
+                <Link
+                  key={`${manufacturer.basePath}-${manufacturer.slug}`}
+                  href={`${manufacturer.basePath}/${manufacturer.slug}`}
                   onMouseEnter={() => setActiveManufacturer(index)}
                   onMouseLeave={() => setActiveManufacturer(null)}
                   onPointerEnter={() => setActiveManufacturer(index)}
@@ -190,28 +210,45 @@ export default function HomePageClient() {
                       </span>
                     )}
                   </div>
-                </a>
+                </Link>
               );
             })}
           </div>
 
-          <div className="mt-10">
+          <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              href="/manufacturers"
-              onMouseEnter={() => setActiveButton("explore")}
+              href="/clinic"
+              onMouseEnter={() => setActiveButton("explore-clinic")}
               onMouseLeave={() => setActiveButton(null)}
-              onPointerEnter={() => setActiveButton("explore")}
+              onPointerEnter={() => setActiveButton("explore-clinic")}
               onPointerLeave={() => setActiveButton(null)}
-              onFocus={() => setActiveButton("explore")}
+              onFocus={() => setActiveButton("explore-clinic")}
               onBlur={() => setActiveButton(null)}
-              onTouchStart={() => setActiveButton("explore")}
+              onTouchStart={() => setActiveButton("explore-clinic")}
               className={`inline-flex items-center rounded-full border border-[#f26c2a] px-6 py-3 text-sm font-medium transition-all duration-300 ease-out ${
-                activeButton === "explore"
+                activeButton === "explore-clinic"
                   ? "-translate-y-1 scale-[1.03] bg-[#f26c2a] text-white shadow-lg shadow-[#f26c2a]/20"
                   : "text-[#f26c2a] shadow-sm"
               }`}
             >
-              {t("home.exploreCta")}
+              {t("home.primaryCta")}
+            </Link>
+            <Link
+              href="/laboratory"
+              onMouseEnter={() => setActiveButton("explore-laboratory")}
+              onMouseLeave={() => setActiveButton(null)}
+              onPointerEnter={() => setActiveButton("explore-laboratory")}
+              onPointerLeave={() => setActiveButton(null)}
+              onFocus={() => setActiveButton("explore-laboratory")}
+              onBlur={() => setActiveButton(null)}
+              onTouchStart={() => setActiveButton("explore-laboratory")}
+              className={`inline-flex items-center rounded-full border border-[#f26c2a] px-6 py-3 text-sm font-medium transition-all duration-300 ease-out ${
+                activeButton === "explore-laboratory"
+                  ? "-translate-y-1 scale-[1.03] bg-[#f26c2a] text-white shadow-lg shadow-[#f26c2a]/20"
+                  : "text-[#f26c2a] shadow-sm"
+              }`}
+            >
+              {t("home.secondaryCta")}
             </Link>
           </div>
         </div>
