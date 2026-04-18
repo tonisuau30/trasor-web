@@ -11,10 +11,16 @@ const featuredBrands = [
     ...brand,
     basePath: "/clinic",
   })),
-  ...laboratoryBrands.slice(0, 3).map((brand) => ({
-    ...brand,
-    basePath: "/laboratory",
-  })),
+  ...laboratoryBrands
+    .filter(
+      (brand) =>
+        !clinicBrands.slice(0, 3).some((clinicBrand) => clinicBrand.slug === brand.slug),
+    )
+    .slice(0, 3)
+    .map((brand) => ({
+      ...brand,
+      basePath: "/laboratory",
+    })),
 ];
 
 export default function HomePageClient() {
@@ -173,6 +179,7 @@ export default function HomePageClient() {
           <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
             {featuredBrands.map((manufacturer, index) => {
               const isActive = activeManufacturer === index;
+              const cardLogo = manufacturer.cardLogo ?? manufacturer.logo;
 
               return (
                 <Link
@@ -185,24 +192,22 @@ export default function HomePageClient() {
                   onFocus={() => setActiveManufacturer(index)}
                   onBlur={() => setActiveManufacturer(null)}
                   onTouchStart={() => setActiveManufacturer(index)}
-                  className={`block w-full h-40 rounded-2xl bg-white p-6 border transition-all duration-300 ease-out ${
+                  className={`block w-full h-40 overflow-hidden rounded-2xl bg-white p-6 border transition-all duration-300 ease-out ${
                     isActive
                       ? "border-[#f26c2a] shadow-lg -translate-y-1 scale-[1.02]"
                       : "border-gray-200 shadow-sm"
                   }`}
                 >
                   <div className="flex h-full items-center justify-center">
-                    {manufacturer.logo ? (
+                    {cardLogo ? (
                       <Image
-                        src={manufacturer.logo}
+                        src={cardLogo}
                         alt={t("manufacturers.logoAlt", {
                           name: manufacturer.name,
                         })}
                         width={220}
                         height={100}
-                        className={`${
-                          manufacturer.logoClassName ?? "h-24"
-                        } w-auto object-contain`}
+                        className="h-28 w-auto max-w-none scale-[2.65] object-contain"
                       />
                     ) : (
                       <span className="text-sm text-gray-400">

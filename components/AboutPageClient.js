@@ -16,11 +16,19 @@ export default function AboutPageClient() {
                 {t("about.eyebrow")}
               </p>
 
-              <h1 className="mb-6 text-5xl font-semibold leading-tight text-[#2f2f2f] md:text-6xl">
-                {t("about.title")}
+              <h1 className="mb-3">
+                <span className="sr-only">{t("about.title")}</span>
+                <Image
+                  src="/images/brand/trasor-logo-25y.svg"
+                  alt=""
+                  width={520}
+                  height={180}
+                  priority
+                  className="h-auto w-[330px] max-w-full md:w-[480px]"
+                />
               </h1>
 
-              <p className="mb-6 text-2xl leading-9 text-gray-600">
+              <p className="mb-4 text-2xl leading-8 text-gray-600">
                 {t("about.tagline")}
               </p>
 

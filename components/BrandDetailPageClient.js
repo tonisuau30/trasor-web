@@ -7,6 +7,13 @@ import { useLanguage } from "@/components/LanguageProvider";
 export default function BrandDetailPageClient({ brand, categoryKey }) {
   const { t } = useLanguage();
   const catalogHref = brand.catalogPdf ? `/catalogs/${brand.catalogPdf}` : null;
+  const watermarkLogo = brand.watermarkLogo ?? brand.logo;
+  const watermarkLogoClassName =
+    brand.watermarkLogoClassName ?? brand.logoClassName ?? "h-28";
+  const watermarkLogoOpacityClassName =
+    brand.watermarkLogoOpacityClassName ?? "opacity-[0.18]";
+  const watermarkLogoPositionClassName =
+    brand.watermarkLogoPositionClassName ?? "";
   const heroBackground =
     categoryKey === "clinic"
       ? "/images/backgrounds/clinic/clinic-hero-bg.png"
@@ -34,14 +41,12 @@ export default function BrandDetailPageClient({ brand, categoryKey }) {
 
         <div className="pointer-events-none absolute inset-x-0 bottom-16 top-20 z-10 flex items-center justify-center px-6 md:bottom-24">
           <Image
-            src={brand.logo}
+            src={watermarkLogo}
             alt=""
             width={720}
             height={300}
             aria-hidden="true"
-            className={`${
-              brand.logoClassName ?? "h-28"
-            } max-h-48 w-auto max-w-[88vw] select-none object-contain opacity-[0.22] md:max-h-72 md:max-w-[680px]`}
+            className={`${watermarkLogoClassName} max-h-[36rem] w-auto max-w-[240vw] scale-[3.6] select-none object-contain ${watermarkLogoOpacityClassName} ${watermarkLogoPositionClassName} md:max-h-[56rem] md:max-w-[2100px] md:scale-[4.2]`}
           />
         </div>
 
