@@ -6,7 +6,7 @@ const brands = {
     cardLogo: "/images/manufacturers/ecs-logo.svg",
     watermarkLogo: "/images/manufacturers/ecs-logo.svg",
     watermarkLogoOpacityClassName: "opacity-[0.32]",
-    watermarkLogoPositionClassName: "-translate-y-8 md:-translate-y-10",
+    watermarkLogoPositionClassName: "-translate-y-14 md:-translate-y-10",
     website: "https://ecssrl.com/en/",
     logoClassName: "h-28",
   },
@@ -91,6 +91,7 @@ const brands = {
     website: "https://www.willpharma.com/en/",
     watermarkLogoClassName: "h-36",
     watermarkLogoOpacityClassName: "opacity-[0.9]",
+    watermarkLogoPositionClassName: "-translate-y-12 md:translate-y-0",
   },
   dentalstoreLucisano: {
     name: "DENTALSTORE & EDIZIONI LUCISANO",
@@ -99,6 +100,7 @@ const brands = {
     cardLogo: "/images/manufacturers/dentalstore-logo.svg",
     watermarkLogo: "/images/manufacturers/dentalstore-logo.svg",
     watermarkLogoOpacityClassName: "opacity-[0.42]",
+    watermarkLogoPositionClassName: "-translate-y-12 md:translate-y-0",
     website: "https://dental-educational-models.com/store/",
   },
   microMedica: {

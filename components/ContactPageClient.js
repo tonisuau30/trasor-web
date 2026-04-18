@@ -28,14 +28,14 @@ export default function ContactPageClient() {
 
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-6 py-20">
-          <div className="grid gap-10 md:grid-cols-2">
-            <div className="rounded-[2rem] border border-gray-200 bg-white p-8 shadow-sm">
+          <div className="grid min-w-0 gap-10 md:grid-cols-2">
+            <div className="min-w-0 rounded-[2rem] border border-gray-200 bg-white p-8 shadow-sm">
               <div className="mb-8 flex items-start gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#f7f3ef] text-[#f26c2a]">
                   <ShoppingBag size={22} />
                 </div>
 
-                <div>
+                <div className="min-w-0">
                   <h2 className="mb-2 text-2xl font-semibold text-[#2f2f2f]">
                     {t("contact.buyingTitle")}
                   </h2>
@@ -51,7 +51,7 @@ export default function ContactPageClient() {
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-gray-200 bg-[#fcfbf9] p-8 shadow-sm">
+            <div className="min-w-0 rounded-[2rem] border border-gray-200 bg-[#fcfbf9] p-8 shadow-sm">
               <h2 className="mb-8 text-2xl font-semibold text-[#2f2f2f]">
                 {t("contact.contactInfo")}
               </h2>
@@ -61,7 +61,7 @@ export default function ContactPageClient() {
                   <div className="mt-1 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#f26c2a] shadow-sm">
                     <MapPin size={20} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-gray-400">
                       {t("contact.addressLabel")}
                     </p>
@@ -79,7 +79,7 @@ export default function ContactPageClient() {
                   <div className="mt-1 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#f26c2a] shadow-sm">
                     <Phone size={20} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-gray-400">
                       {t("contact.phoneLabel")}
                     </p>
@@ -104,26 +104,26 @@ export default function ContactPageClient() {
                   <div className="mt-1 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#f26c2a] shadow-sm">
                     <Mail size={20} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-gray-400">
                       {t("contact.emailLabel")}
                     </p>
                     <div className="space-y-1">
                       <a
                         href="mailto:fernando@trasor.es"
-                        className="block text-lg leading-8 text-gray-600 transition hover:text-[#f26c2a]"
+                        className="block break-all text-lg leading-8 text-gray-600 transition hover:text-[#f26c2a]"
                       >
                         fernando@trasor.es
                       </a>
                       <a
                         href="mailto:administracion@trasor.es"
-                        className="block text-lg leading-8 text-gray-600 transition hover:text-[#f26c2a]"
+                        className="block break-all text-lg leading-8 text-gray-600 transition hover:text-[#f26c2a]"
                       >
                         administracion@trasor.es
                       </a>
                       <a
                         href="mailto:info@trasor.es"
-                        className="block text-lg leading-8 text-gray-600 transition hover:text-[#f26c2a]"
+                        className="block break-all text-lg leading-8 text-gray-600 transition hover:text-[#f26c2a]"
                       >
                         info@trasor.es
                       </a>
@@ -134,7 +134,7 @@ export default function ContactPageClient() {
             </div>
           </div>
 
-          <div className="mt-12 rounded-[2rem] border border-gray-200 bg-white p-8 text-center shadow-sm">
+          <div className="mt-12 min-w-0 rounded-[2rem] border border-gray-200 bg-white p-8 text-center shadow-sm">
             <p className="text-lg leading-8 text-gray-600">
               {t("contact.bottomNote")}
             </p>

@@ -12,14 +12,16 @@ export default function AboutPageClient() {
         <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
           <div className="grid items-center gap-14 md:grid-cols-[0.95fr_1.05fr] lg:gap-20">
             <div className="flex justify-center md:justify-start">
-              <Image
-                src="/images/brand/trasor-logo-25y.svg"
-                alt=""
-                width={720}
-                height={260}
-                priority
-                className="h-auto w-full max-w-[520px] object-contain md:max-w-[620px] lg:max-w-[700px]"
-              />
+              <div className="w-full max-w-[520px] overflow-hidden md:max-w-[620px] lg:max-w-[700px]">
+                <Image
+                  src="/images/brand/trasor-logo-25y.svg"
+                  alt=""
+                  width={720}
+                  height={260}
+                  priority
+                  className="h-auto w-full scale-[1.22] object-contain"
+                />
+              </div>
             </div>
 
             <div className="mx-auto max-w-xl text-center md:mx-0 md:text-left">
