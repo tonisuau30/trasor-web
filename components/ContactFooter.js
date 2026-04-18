@@ -52,12 +52,20 @@ export default function ContactFooter() {
                 {t("contact.phoneLabel")}
               </p>
             </div>
-            <a
-              href="tel:+34620800771"
-              className="text-base leading-7 text-gray-600 transition hover:text-[#f26c2a]"
-            >
-              620 800 771
-            </a>
+            <div className="space-y-1">
+              <a
+                href="tel:+34620800771"
+                className="block text-base leading-7 text-gray-600 transition hover:text-[#f26c2a]"
+              >
+                620 800 771
+              </a>
+              <a
+                href="tel:+34617022590"
+                className="block text-base leading-7 text-gray-600 transition hover:text-[#f26c2a]"
+              >
+                617 022 590
+              </a>
+            </div>
           </div>
 
           <div className="text-left md:text-center">
@@ -81,6 +89,12 @@ export default function ContactFooter() {
                 className="block text-base leading-7 text-gray-600 transition hover:text-[#f26c2a]"
               >
                 administracion@trasor.es
+              </a>
+              <a
+                href="mailto:info@trasor.es"
+                className="block text-base leading-7 text-gray-600 transition hover:text-[#f26c2a]"
+              >
+                info@trasor.es
               </a>
             </div>
           </div>

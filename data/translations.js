@@ -160,7 +160,7 @@ export const translations = {
       title: "TRASOR",
       tagline: "Te devolvemos una sonrisa.",
       intro:
-        "Desde el año 2000, actuamos como enlace entre fabricantes internacionales de productos dentales y el mercado español, priorizando siempre materiales con valor añadido, fiabilidad y una distribución profesional.",
+        "Desde el año 2000, actuamos como enlace entre fabricantes internacionales de productos dentales y el mercado español. Apostamos por materiales con valor añadido, fiabilidad y una distribución profesional basada en la confianza.",
       since: "Desde 2000",
       card1:
         "Somos mayoristas del sector dental, con una trayectoria construida sobre la excelencia, la cercanía y la confianza.",
@@ -170,17 +170,17 @@ export const translations = {
       philosophy1:
         "TRASOR nació en el año 2000 para conectar a fabricantes internacionales de productos dentales con el mercado español.",
       philosophy2:
-        "Nuestra filosofía ha sido siempre buscar materiales alternativos que aportaran un valor añadido real a lo ya existente.",
+        "Nuestra filosofía siempre ha sido ofrecer materiales que aporten un valor añadido real.",
       philosophy3:
-        "TRASOR siempre ha comercializado sus productos exclusivamente a través de nuestra red de distribuidores a nivel nacional.",
+        "Comercializamos nuestros productos exclusivamente a través de nuestra red de distribuidores a nivel nacional.",
       commitmentTitle: "Compromiso y trayectoria",
       commitment1:
-        "Nuestro objetivo es cubrir el mercado nacional, a través de nuestros clientes y su red comercial, con los mejores productos y el mejor servicio posible.",
+        "Nuestro objetivo es cubrir el mercado nacional a través de nuestros clientes, ofreciendo los mejores productos y el mejor servicio posible.",
       commitment2:
-        "Nuestro fundador y CEO, Fernando Leclerc, con una dilatada experiencia, se responsabiliza de que todos los productos cumplan con las exigencias y necesidades que los clientes nos demandan.",
+        "Nuestro fundador y CEO, Fernando Leclerc, con una amplia experiencia en el sector, garantiza que todos los productos cumplen con los más altos estándares.",
       commitment3Prefix:
-        "Nuestra trayectoria es la mejor garantía de excelencia y fiabilidad, y da pie a nuestro eslogan:",
-      slogan: "“Te devolvemos una sonrisa”.",
+        "Nuestra trayectoria es la mejor garantía de excelencia y fiabilidad, y da sentido a nuestro eslogan:",
+      slogan: "“Te devolvemos una sonrisa.”",
     },
     contact: {
       eyebrow: "Contacto",
@@ -373,7 +373,7 @@ export const translations = {
       title: "TRASOR",
       tagline: "We bring back your smile.",
       intro:
-        "Since 2000, we have acted as a link between international dental product manufacturers and the Spanish market, always prioritising materials with added value, reliability and professional distribution.",
+        "Since 2000, we have acted as a link between international dental product manufacturers and the Spanish market. We focus on materials with added value, reliability and professional distribution built on trust.",
       since: "Since 2000",
       card1:
         "We are wholesalers in the dental sector, with a track record built on excellence, proximity and trust.",
@@ -383,16 +383,16 @@ export const translations = {
       philosophy1:
         "TRASOR was founded in 2000 to connect international dental product manufacturers with the Spanish market.",
       philosophy2:
-        "Our philosophy has always been to seek alternative materials that provide real added value to what already exists.",
+        "Our philosophy has always been to offer materials that provide real added value.",
       philosophy3:
-        "TRASOR has always marketed its products exclusively through our nationwide distributor network.",
+        "We market our products exclusively through our nationwide distributor network.",
       commitmentTitle: "Commitment and experience",
       commitment1:
-        "Our goal is to cover the national market through our customers and their commercial network, with the best products and the best possible service.",
+        "Our goal is to cover the national market through our customers, offering the best products and the best possible service.",
       commitment2:
-        "Our founder and CEO, Fernando Leclerc, with extensive experience, ensures that all products meet the requirements and needs our customers demand.",
+        "Our founder and CEO, Fernando Leclerc, with extensive experience in the sector, ensures that all products meet the highest standards.",
       commitment3Prefix:
-        "Our track record is the best guarantee of excellence and reliability, and it gives meaning to our slogan:",
+        "Our track record is the best guarantee of excellence and reliability, and gives meaning to our slogan:",
       slogan: "“We bring back your smile.”",
     },
     contact: {
@@ -585,7 +585,7 @@ export const translations = {
       title: "TRASOR",
       tagline: "Ti restituiamo il sorriso.",
       intro:
-        "Dal 2000 facciamo da collegamento tra produttori internazionali di prodotti dentali e il mercato spagnolo, dando priorità a materiali con valore aggiunto, affidabilità e distribuzione professionale.",
+        "Dal 2000 facciamo da collegamento tra produttori internazionali di prodotti dentali e il mercato spagnolo. Puntiamo su materiali con valore aggiunto, affidabilità e una distribuzione professionale basata sulla fiducia.",
       since: "Dal 2000",
       card1:
         "Siamo grossisti nel settore dentale, con una storia costruita su eccellenza, vicinanza e fiducia.",
@@ -595,16 +595,16 @@ export const translations = {
       philosophy1:
         "TRASOR è nata nel 2000 per collegare produttori internazionali di prodotti dentali con il mercato spagnolo.",
       philosophy2:
-        "La nostra filosofia è sempre stata cercare materiali alternativi capaci di offrire un reale valore aggiunto a ciò che già esiste.",
+        "La nostra filosofia è sempre stata offrire materiali capaci di apportare un reale valore aggiunto.",
       philosophy3:
-        "TRASOR ha sempre commercializzato i propri prodotti esclusivamente tramite la nostra rete nazionale di distributori.",
+        "Commercializziamo i nostri prodotti esclusivamente tramite la nostra rete nazionale di distributori.",
       commitmentTitle: "Impegno e percorso",
       commitment1:
-        "Il nostro obiettivo è coprire il mercato nazionale attraverso i nostri clienti e la loro rete commerciale, con i migliori prodotti e il miglior servizio possibile.",
+        "Il nostro obiettivo è coprire il mercato nazionale attraverso i nostri clienti, offrendo i migliori prodotti e il miglior servizio possibile.",
       commitment2:
-        "Il nostro fondatore e CEO, Fernando Leclerc, forte di una lunga esperienza, si assicura che tutti i prodotti rispondano alle esigenze e ai requisiti richiesti dai clienti.",
+        "Il nostro fondatore e CEO, Fernando Leclerc, con una vasta esperienza nel settore, garantisce che tutti i prodotti rispettino gli standard più elevati.",
       commitment3Prefix:
-        "Il nostro percorso è la migliore garanzia di eccellenza e affidabilità, e dà senso al nostro slogan:",
+        "Il nostro percorso è la migliore garanzia di eccellenza e affidabilità, e dà significato al nostro slogan:",
       slogan: "“Ti restituiamo il sorriso.”",
     },
     contact: {

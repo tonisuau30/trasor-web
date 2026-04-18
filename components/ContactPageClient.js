@@ -83,12 +83,20 @@ export default function ContactPageClient() {
                     <p className="mb-1 text-sm font-medium uppercase tracking-[0.16em] text-gray-400">
                       {t("contact.phoneLabel")}
                     </p>
-                    <a
-                      href="tel:+34620800771"
-                      className="text-lg leading-8 text-gray-600 transition hover:text-[#f26c2a]"
-                    >
-                      620 800 771
-                    </a>
+                    <div className="space-y-1">
+                      <a
+                        href="tel:+34620800771"
+                        className="block text-lg leading-8 text-gray-600 transition hover:text-[#f26c2a]"
+                      >
+                        620 800 771
+                      </a>
+                      <a
+                        href="tel:+34617022590"
+                        className="block text-lg leading-8 text-gray-600 transition hover:text-[#f26c2a]"
+                      >
+                        617 022 590
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -112,6 +120,12 @@ export default function ContactPageClient() {
                         className="block text-lg leading-8 text-gray-600 transition hover:text-[#f26c2a]"
                       >
                         administracion@trasor.es
+                      </a>
+                      <a
+                        href="mailto:info@trasor.es"
+                        className="block text-lg leading-8 text-gray-600 transition hover:text-[#f26c2a]"
+                      >
+                        info@trasor.es
                       </a>
                     </div>
                   </div>
